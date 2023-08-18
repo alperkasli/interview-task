@@ -1,0 +1,110 @@
+@use "./variables";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	line-height: 1;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	background: #ece9e6;
+}
+
+.page {
+	min-height: 100vh;
+	min-width: 100vw;
+	background: linear-gradient(to left, variables.$secondary-color, white);
+}
+
+.flex {
+	display: flex;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.btn-icon {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: all 0.2s linear;
+
+	&:hover {
+		background: rgb(231, 229, 229);
+		transition: all 0.2s linear;
+	}
+}
+
+.badge {
+	background-color: variables.$primary-color;
+	padding: 6px;
+	border-radius: 6px;
+	color: white;
+	&:hover {
+		border: none;
+		border-radius: 6px;
+		background-color: variables.$secondary-color;
+	}
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin-top: 35px;
+
+	.label {
+		position: absolute;
+		transition: all 0.5s ease;
+		pointer-events: none;
+	}
+
+	.input {
+		padding: 10px;
+		background-color: transparent;
+		border: none;
+		border-bottom: solid 1px white;
+		outline: none;
+
+		&:focus ~ label,
+		&:valid ~ label {
+			margin-top: -25px;
+			transition: all 0.5s ease;
+		}
+	}
+
+	.select {
+		padding: 10px;
+		background-color: transparent;
+		border: none;
+		// border-bottom: solid 1px white;
+		outline: none;
+		margin-bottom: 10px;
+	}
+}
